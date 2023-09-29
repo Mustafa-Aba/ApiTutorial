@@ -39,7 +39,7 @@ public class deneme2 {
         response.prettyPeek();
 
         Assert.assertEquals(response.statusCode(),200);
-        //Assert.assertEquals(response.contentType(),"application/json; charset=utf-8");
+        Assert.assertEquals(response.contentType(),"application/json; charset=utf-8");
         Assert.assertTrue(response.getBody().asString().contains("emma.wong@reqres.in"));
 
 

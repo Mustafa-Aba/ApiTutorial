@@ -69,6 +69,8 @@ public class Path_And_Query_Param {
         myQuery.put("keyword","computer");
         myQuery.put("category","phones");
 
+
+
         Response response = given()
                 .accept(ContentType.JSON)
                 .contentType(ContentType.JSON)

@@ -1,5 +1,6 @@
 package com.Clarusway.TDD.Lesson.Day4;
 
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.Assert;
@@ -7,6 +8,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
+
 
 public class ComplexBody {
 
@@ -33,8 +35,26 @@ public class ComplexBody {
 
 
 
+
         response.prettyPrint();
 
 
+    }
+
+    @Test
+    public void test2(){
+
+        Response response = given()
+                .accept(ContentType.JSON)// ben sana request gönderdiğimde sadece JSON kabul ediyorum
+                .contentType(ContentType.JSON) // JSON göndercem hemde
+                //bu ikisini en baştan söylüyoruz
+                .when()
+                .get("https://reqres.in/api/users")
+                //artık gideceği nooktayı belirtiyorum
+                .then()
+                .extract().response();
+
+
+        response.prettyPrint();
     }
 }

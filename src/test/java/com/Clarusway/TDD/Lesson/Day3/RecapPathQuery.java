@@ -28,7 +28,7 @@ public class RecapPathQuery {
 
 
         int id = response.path("id"); // Path method ile responsun icersinde ki id yi disariya cikarttik
-        Assert.assertEquals(id, 270223); // Kontrol noktasinda testing gecip gecmedigini belirledik gelen deger ve bekledigimiz deger
+        Assert.assertEquals(id, 270223); // Kontrol noktasinda testing gec gecmedigini belirledik gelen deger ve bekledigimiz deger
 
         String name = response.path("name");
         Assert.assertEquals(name, "Shakeel");
